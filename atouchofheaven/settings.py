@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'atouchofheaven.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Memories',
+        'USER': 'memories_user',
+        'PASSWORD': 'Rafaela1407',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
