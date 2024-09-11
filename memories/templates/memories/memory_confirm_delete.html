@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Recuerdo</title>
+</head>
+<body>
+    <h1>¿Seguro que quieres eliminar este recuerdo?</h1>
+    <p><strong>{{ memory.title }}</strong></p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Sí, eliminar</button>
+    </form>
+    <a href="{% url 'memory_list' %}">Cancelar</a>
+</body>
+</html>
