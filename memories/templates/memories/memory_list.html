@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Recuerdos</title>
+</head>
+<body>
+    <h1>Recuerdos</h1>
+    <a href="{% url 'memory_create' %}">Crear nuevo recuerdo</a>
+    <ul>
+        {% for memory in memories %}
+            <li>
+                <strong>{{ memory.title }}</strong><br>
+                {{ memory.description }}<br>
+                {% if memory.photo %}
+                    <img src="{{ memory.photo.url }}" alt="Foto de {{ memory.title }}" width="200px"><br>
+                {% endif %}
+                {% if memory.video %}
+                    <video width="320" height="240" controls>
+                        <source src="{{ memory.video.url }}" type="video/mp4">
+                    </video><br>
+                {% endif %}
+                {% if memory.document %}
+                    <a href="{{ memory.document.url }}">Ver documento</a><br>
+                {% endif %}
+                {% if memory.link %}
+                    <a href="{{ memory.link }}">Ver enlace</a><br>
+                {% endif %}
+                <a href="{% url 'memory_update' memory.pk %}">Editar</a> |
+                <a href="{% url 'memory_delete' memory.pk %}">Eliminar</a>
+            </li>
+        {% empty %}
+            <li>No hay recuerdos disponibles.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
