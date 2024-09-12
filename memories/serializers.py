@@ -7,3 +7,4 @@ class MemorySerializer(serializers.ModelSerializer):
         model = Memory
         fields = '__all__'
 
+
