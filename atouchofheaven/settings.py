@@ -137,6 +137,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',  # Permite acceso sin autenticación
+        'rest_framework.permissions.AllowAny',
     ],
 }
